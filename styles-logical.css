@@ -1,0 +1,316 @@
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face{
+    font-family: charter ;
+    src:url('fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+:root{
+font-size:18px;
+--white30: white;
+--white20: #A5A3A5;
+--white10: #3A3539;
+
+
+}
+/* html{font-size: 16px; } para este proyecto se le especifico el valor de la fuente a ña seudoclase (:root) ya que este es el elemento  mas superior*/
+/* valor por defento de la fuente dentro del navegador, por lo que es indigerente si se asugana aca o no */
+body{
+    color: var(--white30);
+    font-family:"Nunito", sans-serif;
+    background:#251F24;
+    margin: 0;
+    /* margin-inline:100px ; */
+    /* margin-block:;
+    margin-block-start: ;
+    margin-block-end: ; */
+    /* margin-inline(modo logico), modifica  los margenes en relacion a la lectura de mi contenido */
+    /* font-family: charter-regular; */
+}
+a{
+    color:var(--3--white30);
+}
+.header{
+    /* position: relative; */
+    /* con esto posicionamos nuentro elemento relativo a la 
+    seccion o caja de nuestro diseño */
+    /* position: sticky;
+    inset-block-start: -45px;  */
+
+    /* hacemos que nuestro elemento se pocicione relativo a la seccion pero le damos
+    la funcionalidad de moverce cuando hacemos scroll */
+}
+.header-content{
+    padding-inline: 20px;
+    /* position: relative;
+    inset-block-start: 65px;  */
+    /* lo borro de aca porque en el media qwery le dejo la posicion */
+}
+header{
+    margin-block-start: 20px;
+    /* --white10:red; puedo pacer el cambio del color ya guardado si llegara el caso poarticular */
+    font-size: 14px; 
+    color: var(--white30);
+    /* position: absolute; */
+/*En propiedades lògicas  top seria */
+    /* inset-block-start: 0px;  */
+    /* cuando tenemos un elemento en posicion absoluta y al darle valor a esa posicion
+    nuestro elemento tomara ese valor dado, pero si queremos que el elemento sera relativo a una caja o seccion
+     determinda debemos darle posicion relativa a esta */
+    /* bottom */
+    /* inset-block-end: ; */
+    
+    /* left */
+    /* inset-inline-start: -208px ; */
+    /* lo movemos en su eje */
+
+    /* right */
+    /* inset-inline-end: ; */
+   
+    /* inline-size: 188px; */
+
+}
+header li {
+    color: var(--white20);
+    margin-block-end: 16px;
+}
+header a {
+    color: var(--white20);
+    text-decoration: none;
+}
+header a:hover{
+    color:var(--white10);
+}
+nav details summary {
+    font-weight: bold;
+}
+h1{
+   
+    font-size: 40px;
+    font-weight: normal;
+    margin-inline-start: 20px;
+    margin-block-end: 16px;
+    /* font-size: 3.75 em; */
+}
+h2{
+    /* font-size: 32px; */
+    font-size: 2em;
+    font-weight: normal;
+    margin-block: 40px;
+
+}
+h3{
+    /* font-size: 24px; 24px/16px= 1.5 em */
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px;
+
+}
+hr{
+    margin-block: 40px;
+    border-color: rgba(97, 97, 97, 0.2);
+}
+pre{
+    background: var(--white10);
+    padding: 40px;
+    overflow: auto;
+    /* overflow: auto; si un elemento se desborda de mi caja, esto permite hacer un scroll solo para este elemento, no para la paguina completa */
+    border-radius: 8px;
+    border: 10px solid red;
+
+    border-left: 5PX solid blue;
+    border-inline-start: 5px solid white;
+
+    border-block-end: 20px solid pink;
+    border-inline-end: 5px solid green;
+    border-block-start-color: blue;
+    border: 10px solid #5551ff;
+    box-shadow: -10px 10px 0 0 #abaaf6;
+    margin-block-end: 30px;
+    /* Me pinta un circulo perfecto */
+    /* border-radius: 50%;
+    inline-size: 400px;
+    block-size: 400px; */
+/* ---------------------------------- */
+        /* Propiedades lògicas */
+    /* border-start-start-radius: 60px;
+    border-start-end-radius: 90px;
+    border-end-start-radius: 30px;
+    border-end-end-radius: 40px; */
+}
+p{
+    color: var(--white20);
+}
+
+.hero{
+
+    background-image:linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    /* background-image:linear-gradient(to top, rgba(255,255,255,.3), transparent), url('images/patron-1.png'); */
+    /* linear-gradient: para hacer el degradado, (hacia donde quiero que vaya, el color en rgba(255,255,255,.3/porcentanje de degradado/), transparent/en este caso para que la imagen se vea */
+    /* height: 350px; */
+    
+    /* logico */
+    block-size: 50px;
+   
+
+}
+.section-content{
+    counter-reset: titleList;
+}
+.section-content img{
+    margin-block-start:40px ;
+    display: block;
+    /* logico */
+    max-inline-size: 100%;
+    /* fisico */
+    /* max-width: 100%; */
+}
+.section-content h3{
+    counter-increment: titleList;
+}
+
+.section-content h3::before{
+    content: counter(titleList, decimal)'. ';
+}
+/* .section-content h3::after{
+    content: '';
+    width: 32px;
+    height: 4px;
+    background: var(--white30);
+    display: inline-block;
+} */
+blockquote{
+    margin-block-start:80px;
+    margin-block-start:63px;
+    background-color: var(--white10);
+    line-height: 32px;
+    font-size: 24px;
+    border-radius: 8px;
+    padding: 24px;
+}
+blockquote p {
+    color: var(--white30);
+}
+.main hr{
+    display: none;
+}
+.main{
+    /* logico */
+    /* border: 1px solid red; */
+}
+.wrapper{
+    /* border: 1px solid yellow; */
+    /* logico */
+    max-inline-size: 902px;
+    /*max-inline-size:- para adaptarlo al tamaño de la ventana "resposive" */
+    /* inline-size: 902px; */
+    margin: auto;
+}
+.main-content{
+    padding-inline: 16px; 
+    /* solo se aplica a el contenido que tengo en la linea (de izquierda a derecha) */
+    /* padding: 16px; me afecta todas las cordenadas */
+    /* border: 1px solid blue; */
+    /* logico */
+    
+}
+.slider{
+    /* border: 2px solid red; */
+}
+.slider-container{
+    /* block-size: 100px; */
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    font-size: 0;
+    /* border: 3px solid green; */
+}
+.video{
+    margin: 0;
+    /* border: 1px solid orange; */
+    display: inline-block;
+    /* los elementos con display inline, no tienen ancho ni alto, cuando los colocamos 
+    uno al lado del otro y queremos darle ancho, alto y paddind 
+    esxiste la propiedad display:inline-block que permite esto*/
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+.slider-bullet-list{
+    /* border: 2px solid yellow; */
+    text-align: center;
+    margin-block-start: 10px;
+}
+.slider-bullet{
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    background: white;
+    border-radius: 50%;
+}
+.form input{
+    inline-size: 100%;
+    border: 1px solid var(--white30);
+    background: #251F24;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    color: var(--white30);
+    font-size: 16px;
+    display: block;
+    margin-block-end: 24px;
+}
+.form input[type="submit"]{
+    background: rgba(21, 126, 251, 1);
+    border: none;
+   
+}
+.form ::-webkit-input-placeholder{
+    color: var(--white20);
+}
+
+@media screen and (min-width: 1364px ) {
+    .header{
+        position: sticky;
+        inset-block-start: -45px; 
+    }
+    .header-content{
+        position: relative;
+        inset-block-start: 65px; 
+        padding: 0;
+    }
+    header{
+        position: absolute;
+        inset-block-start: 0px; 
+        inset-inline-start: -208px ;
+        inline-size: 188px;
+    }
+
+    .hero{
+        block-size: 350px;
+    }
+    h1{
+        font-size: 60px;
+        margin-block-start: 64px;
+    }
+}
