@@ -1,0 +1,201 @@
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+@font-face{
+    font-family: charter;
+    src:url('fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face{
+    font-family: charter ;
+    src:url('fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+:root{
+font-size:18px;
+--gray30:#212121;
+--gray20:#212429;
+--gray10:#616161;
+
+}
+/* html{font-size: 16px; } para este proyecto se le especifico el valor de la fuente a ña seudoclase (:root) ya que este es el elemento  mas superior*/
+/* valor por defento de la fuente dentro del navegador, por lo que es indigerente si se asugana aca o no */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--gray30);
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    /* font-family: charter-regular; */
+}
+a{
+    color:var(--3--gray30);
+}
+header{
+    /* --gray10:red; puedo pacer el cambio del color ya guardado si llegara el caso poarticular */
+    font-size: 14px;  
+    color: var(--gray10);
+    /* background: red; */
+    width: 188px;
+    /* position: relative; ocupa todo el espacio del bloque */
+    /* cuando utilizo la posiciòn relativa se activan las siguientes caracteristicas 
+    (top, left, bottom, right, z-index)  */
+   /* z-index permite que mi elemento se mueva en el eje z, (sobreponerce u ocultarce sobre otro elemento) */
+   /* position: absolute; */
+    /* este pierde su posicion fiica y se ubica en el espacio por defecto asiganda
+     por el DOM y se encima sobre los otros elementos */
+     /* cuando utilizo la posiciòn absoluta se activan las siguientes caracteristicas 
+    (top, left, bottom, right, z-index)  */
+    /* nota: si quiero mover un elemento al que le di posicion absoluta y que esta dentro de un seccion, 
+    a esta secciòn debo darle la posicion relativa, y que si no tiene esta caracteristica, el elemento a mover se desborda de la seccion   */
+    /* position: fixed; */
+    /* cuando utilizo la posiciòn fixed se activan las siguientes caracteristicas 
+    (top, left, bottom, right, z-index)  */
+    /* esta tiene como caracteristica (fijarce o mantenerce) vemos el elemento a medida que se da scroll a la pagina */
+    /* position: sticky; */
+    /* este ocupa todo el ancho del bloque, este requiere ser relativo a algo, se le debe dar valor a top,bottom */
+    /* esta posicion hace que mi elemento se fije sobre mis otros elementos (al dar scroll pasa cobre ellos) */
+    /* top: 20px; */
+    position: absolute;
+    top: 64px;
+    left: -232px;
+}
+header a {
+    color: var(--gray10);
+    text-decoration: none;
+}
+header a:hover{
+    color:var(--gray10);
+}
+header li{
+    margin-bottom: 16px;
+}
+.header{
+    position: sticky;
+    top: 0;
+}
+nav details summary {
+    font-weight: bold;
+    line-height: 24px;
+}
+h1{
+    font-size: 60px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    /* font-size: 3.75 em; */
+    font-weight: 400px;
+}
+/* h1 + p {
+    margin-bottom: 64px;
+} */
+hr{
+    margin: 64px 0;
+}
+h2{
+    /* font-size: 32px; */
+    font-size: 2em;
+    margin:64px 0 40px ;
+    font-weight: normal;
+}
+h3{
+    /* font-size: 24px; 24px/16px= 1.5 em */
+    font-size: 1.5em;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-weight: normal;
+    position: sticky;
+}
+pre{
+    background:#FEC62E;
+    padding: 40px;
+    font-family: 'Roboto';
+    line-height:24px;
+}
+blockquote{
+    margin: 32px 0;
+    padding-left: 16px;
+    line-height: 24px;
+    border-left: 4px solid var(--gray30);
+}
+blockquote span {
+    color: var(--gray10);
+}
+blockquote span::before {
+content: "-";
+}
+.header-content{
+    position: relative;
+}
+.main{
+    border: 1px solid red;
+    
+   
+}
+.wrapper{
+    width: 902px;
+    margin:auto;
+ /* si el elemento es de bloque,(en este caso es de bloque wrapper) este tiene un acho definido, al colocarle el margin en auto, este nos centra todo el bloque */
+}
+.main-content{
+    /* padding: 20px; */
+}
+.hero{
+    background-image:linear-gradient(to top, rgba(255,255,255,.3), transparent), url('images/patron-1.png');
+    /* linear-gradient: para hacer el degradado, (hacia donde quiero que vaya, el color en rgba(255,255,255,.3/porcentanje de degradado/), transparent/en este caso para que la imagen se vea */
+    height: 350px;
+}
+.section-content{
+    margin-top: 164px;
+    position: relative;
+   
+}
+.section-content:first-of-type{
+ margin: 0;
+}
+.section-content ol li {
+    line-height:  24px;
+    }
+.section-content ul li {
+margin-bottom: 16px;
+}
+.section-content + hr {
+    display: none;
+}
+.section-content img{
+    margin-top: 40px;
+
+}
+.section-content{
+    counter-reset: titleList;
+}
+.section-content h3{
+    counter-increment: titleList;
+    padding-bottom: 8px;
+}
+
+.section-content h3::before{
+    content: counter(titleList, decimal) '. ';
+}
+.section-content h3::after{
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--gray30);
+    display: inline-block;
+    position: absolute;
+    left: 0; 
+    bottom: 0; 
+} 
